@@ -1,0 +1,37 @@
+int sw1 =A1;
+int sw2 =A2;
+int out1=5;
+int out2=4;
+int out3=3;
+int out4=2;
+void setup()
+{
+  pinMode(sw1,INPUT);//gas sensor
+  pinMode(sw2,INPUT);// capacitive sensor
+  
+  pinMode(out1,OUTPUT);
+  pinMode(out2,OUTPUT);
+  pinMode(out3,OUTPUT);
+  pinMode(out4,OUTPUT);
+}  
+void loop()
+{
+  
+if ((digitalRead(sw1)==LOW) && (digitalRead(sw2)==HIGH)) // both condition 
+  {
+    con();
+  }
+  
+  else
+  {  digitalWrite(out1,LOW);
+     digitalWrite(out2,LOW);
+     digitalWrite(out3,LOW);
+     digitalWrite(out4,LOW); 
+  }
+}
+void con()
+{  digitalWrite(out1,HIGH);
+   digitalWrite(out2,HIGH);
+   digitalWrite(out3,HIGH);
+   digitalWrite(out4,HIGH);
+}
