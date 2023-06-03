@@ -1,0 +1,36 @@
+//RF Robot
+int sw1 =2;
+int sw2 =3;
+int sw3 =4;
+int sw4 =5;
+
+int out1=13;
+
+void setup()
+{
+  pinMode(sw1,INPUT);
+  pinMode(sw2,INPUT);
+  pinMode(sw3,INPUT);
+  pinMode(sw4,INPUT);
+  
+  pinMode(out1,OUTPUT);
+  
+}  
+void loop()
+{
+  if ((digitalRead(sw1)==HIGH) && (digitalRead(sw2)==HIGH) && (digitalRead(sw3)==HIGH) && (digitalRead(sw4)==HIGH))
+  {
+    fwd();
+  }
+  
+  else
+  {  
+     digitalWrite(out1,LOW);
+      
+  }
+}
+void fwd()
+{  
+   digitalWrite(out1,HIGH);
+   
+}
